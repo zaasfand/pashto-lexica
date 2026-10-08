@@ -1,10 +1,19 @@
 {
   "name": "@rekhtya/pashto-lexica",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Rekhtya - PashtoLexica is an NPM package that processes Pashto text from .txt files using Google's Generative Language API (Gemini). It detects the script type (Roman Pashto or Literal Pashto), segments text, extracts word details, translates/transliterates between scripts, and returns a structured JSON output.",
+  "type": "module",
   "main": "pashtoGenerative.js",
+  "exports": {
+    ".": "./pashtoGenerative.js"
+  },
+  "files": [
+    "pashtoGenerative.js",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test test/pashtoGenerative.test.js"
   },
   "repository": {
     "type": "git",
@@ -21,14 +30,16 @@
     "pashto-lexical"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "bugs": {
     "url": "https://github.com/zaasfand/pashto-lexica/issues"
   },
   "homepage": "https://github.com/zaasfand/pashto-lexica#readme",
   "dependencies": {
-    "@google/generative-ai": "^0.21.0",
-    "axios": "^1.7.9"
+    "@google/generative-ai": "^0.21.0"
   },
   "private": false
 }
